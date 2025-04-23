@@ -1,0 +1,191 @@
+.ebicon, [data-slide="ebicon"] {
+  background-image: url(https://www.empfehlungsbund.de/assets/logos/m_Logo_Empfehlungsbund-4899b0f814a3825a218fe21829273009c1106cc7c2a37c9aca949b98390370dd.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-position: 99% 10px;
+}
+.sideBySide {
+  font-size: 0.8em; display: grid; grid-template-areas: "a a"
+}
+.sideBySide .fragment p {
+  text-align: center
+}
+.info-alert {
+  background: #55bfff7a;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px #00568a7a;
+  border: 1px solid #55bfffff;
+  text-wrap: balanced;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.info-alert::before {
+  content: "ℹ️"
+
+}
+.inline-block { display: inline-block; }
+a.button {
+  background: #ddd;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  color: #333;
+  box-shadow: 2px 2px 5px #aaa;
+  border: 1px solid #bbb;
+  font-size: 0.8em
+}
+a.href-content::before {
+  content: attr(href);
+  display: block; /* put it on a new line */
+  color: gray;
+  font-size: 0.5em;
+  font-weight: 100;
+}
+
+img.icon {
+  width: 0.75em; height: 0.75em; border: none !important;
+}
+a.button:hover {
+  border: 1px solid #bbb;
+  color: #000;
+  background: #ccc;
+}
+.center { text-align: center !important}
+.balanced { text-wrap: balanced}
+.flex { display: flex}
+.gap-2 { gap: 10px }
+#doc.slides pre.part {
+  text-align: left;
+}
+img { max-height: 70vh; }
+#doc.slides ol, #doc.slides ul { 
+text-align: left;}
+.fragment { text-align: left; }
+table td, table th { font-size: 1.4rem; }
+a[href*='/issues'],a[href*='/commit'],a[href*='/pull'] {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.9em;
+  background: #ddd7;
+  border-radius: 3px;
+
+}
+.ignore-pr a {
+  position: static;
+}
+.ignore-pr, .ignore-pr p {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-around;
+}
+.reveal blockquote {
+  width: 100%;
+  font-size: 0.6em;
+  line-height: 1.3;
+}
+h1, h2, h3, h5 {
+  font-family: "PT Serif", "Source Sans Pro", Helvetica, sans-serif !important;
+}
+.reveal h6 { 
+  padding: 30px 0 10px 0; text-transform: uppercase; font-size: 0.4em; color: #999; font-weight: normal; 
+
+}
+p code, li code {
+  font-size: 0.7em;
+  display: inline-block;
+  background: #eee;
+  padding: 2px;
+  border-radius: 3px;
+  border: 1px solid #ccc;        
+}
+.fragment { text-align: initial }
+.has-dark-background code {
+  background: #333;
+}
+.has-dark-background a {
+  color: #ddf;
+}
+[data-size="summary"] ul {
+  list-style: none;
+  margin: none;
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  line-height: 1.2;
+}
+li.pro:before, li.neg:before {
+  margin-right: 5px;
+  position: absolute;
+  left: -1.4em;
+}
+li.neg:before {
+  content: "👎"
+}
+li.pro:before {
+  content: '👍';
+  filter: hue-rotate(30deg) brightness(0.6) saturate(120%);
+}
+li.pro, li.neg{
+  position: relative;
+  margin-left: 1em;
+} 
+[data-slide="image"] img {
+  max-height: 50vh !important;
+  margin: 0 !important;
+}
+[data-slide="image"] p {
+  margin: 0
+}
+[data-slide="small-list"] ul, [data-slide="small-list"] ol {
+  font-size: 0.8em;
+}
+.reveal [data-slide="code"] pre code {
+  <!-- max-height: 70vmin; -->
+  font-size: 0.9em;
+  <!-- max-height: 80vh; -->
+  font-size: 0.9em;
+  height: 100%;
+}
+.reveal [data-slide="code"] pre {
+  margin: 0;
+  width: 100%;
+  white-space: pre-wrap;
+  margin-bottom: 40px;
+}
+.reveal [data-slide="code"] pre code {
+  max-height: 55vh;
+  max-width: 65vw;
+  white-space: pre-wrap;
+}
+.reveal [data-slide="code"] { padding: 0 }
+.reveal [data-slide="code"] .hljs-ln td { font-size: 0.7em; line-height: 1.5 }
+.hljs-ln-numbers { display: none }
+
+
+.reveal .custom-ul {
+  list-style-type: none;
+}
+ul.custom-ul li.open-issue, ul.custom-ul li.done {
+  position: relative;
+}
+ul.custom-ul li.open-issue:before {
+  content: "?";
+  position: absolute;
+  left: -1.2em;
+  color: #555;
+  font-size: 0.7em;
+  top: 0.3em;
+}
+ul.custom-ul li.done:before {
+  content: "✅";
+  position: absolute;
+  left: -1.5em;
+  color: #555;
+  font-size: 0.7em;
+  top: 0.3em;
+}
