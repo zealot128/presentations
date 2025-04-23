@@ -51,7 +51,7 @@ Bringing the latest version of my app (with all it's dependencies) "live", repro
 
 ----
 
-<img src="https://documents.pludoni.de/uploads/81c70729c09a806a2d6a84200.png" style='width: 150px'>
+<img src="docker.png" style='width: 150px'>
 
 ### Enter Docker
 
@@ -77,15 +77,17 @@ Bringing the latest version of my app (with all it's dependencies) "live", repro
 Great! Now how do we:
 <ul class='custom-ul'>
 <li class='open-issue'>  Deploy more than 1 App-Server
-<li class='open-issue'>  Deploy new versions without downtime
-<li class='open-issue'>  Provide secrets/environment variables
-<li class='open-issue'>  Specify and run external service dependencies, such as Database, Redis
-<li class='open-issue'>  Attach persistent state/volumes 
+<li class='open-issue fragment'>  Deploy new versions without downtime
+<li class='open-issue fragment'>  Provide secrets/environment variables
+<li class='open-issue fragment'>  Specify and run external service dependencies, such as Database, Redis
+<li class='open-issue fragment'>  Attach persistent state/volumes 
 </ul>
 
 ----
 
-### <small>Simple Solution:</small><br> Docker-compose allows, to:
+### <small>Simple Solution:</small><br> Docker-compose
+
+<p><small>Allows to:</small></p>
 
 <ul class='custom-ul'>
 <li class="done fragment">  Provide secrets/environment variables
@@ -98,13 +100,12 @@ Great! Now how do we:
 
 ----
 
-![](https://documents.pludoni.de/uploads/81c70729c09a806a2d6a84202.png)
+###### Enter Kamal (former "Mrsk")
 
-
-### Enter: Kamal <small style='font-size: 0.5em'><br>(former "Mrsk")</small>
+![](kamal-icon.png)
 
 > Kamal offers **zero-downtime deploys**, rolling restarts, asset bridging, remote builds, accessory service management, and everything else you need to deploy and manage your web app in production with Docker. Originally built for Rails apps, Kamal will work with any type of web app that can be containerized.
-> kamal-deploy.org
+> <br>[kamal-deploy.org](https://kamal-deploy.org)
 
 ----
 
@@ -198,7 +199,7 @@ builder:
 
 ----
 
-![](https://documents.pludoni.de/uploads/a8f5fcb05768ac038fcca0400.png)
+![](kamal-deploy.png)
 
 
 ----
@@ -211,13 +212,13 @@ builder:
 <small>Running `kamal deploy` will:</small>
 
 1. Build image locally ``docker build .`` and push to the registry
-2. Install docker on remote machine if necessary
-3. Push **secrets** from `.kamal/secrets`
-4. Authenticating prod box via registry token & pull image
-5. Rolling restart: 
+2.  <!-- .element: class="fragment" --> Install docker on remote machine if necessary
+3. Push <strong>secrets</strong> from <code>.kamal/secrets</code>  <!-- .element: class="fragment" --> 
+4.  <!-- .element: class="fragment" --> Authenticates production box via Registry Token & pull image from Registry
+5. Rolling restart:   <!-- .element: class="fragment" -->
     - boot one container, try to access /up until it get's a 200
     - Zero-Downtime restart container one after the other
-8. Clean up old containers & images
+8. Clean up old containers & images  <!-- .element: class="fragment" -->
 
 ----
 
@@ -323,7 +324,7 @@ CMD ["./bin/thrust", "./bin/rails", "server"]
 
 <small style='font-size: 0.6rem'><a href="https://testdouble.com/insights/thruster-vs-kamal-proxy-guide">Source: TestDouble Blog</a></small>
 
-<img src='https://documents.pludoni.de/uploads/81c70729c09a806a2d6a84201.png' style='max-height: 70vh'>
+<img src='thruster-kproxy.png' style='max-height: 70vh'>
 
 ----
 
@@ -427,7 +428,7 @@ proxy:
 kamal app containers
 ```
 
-![](https://documents.pludoni.de/uploads/a8f5fcb05768ac038fcca0402.png)
+![](app-containers.png)
 
 <div class='fragment center'>
 Rollback = Deploy without build & download
@@ -557,6 +558,15 @@ servers:
 
 ----
 
+#### Shared host: multiple apps on one machine
+
+- Kamal-Proxy does the routing based on the host name. No further config required.
+- Just make sure the ``service: example`` name is unique for each app.
+-  <!-- .element: class="fragment" --> Prefix all Storage and Cache paths with the service name, otherwise, you might share the storage between apps.
+-  <!-- .element: class="fragment" --> You can also have multiple Accessories (like PostgreSQL) of the same kind. The hostname is unique example-db, so no port clashes.
+
+----
+
 <!-- .slide: data-slide="code" -->
 
 #### BG-Jobs & Cronjobs
@@ -652,7 +662,7 @@ asset_path: /rails/public/assets
     <img class='icon' src='https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png'><br>
     /in/stefanwienert</a>
 <a class='button href-content' href='https://www.empfehlungsbund.de/jobs'>
-    <img class='icon' style='height: 1em; width: auto; box-shadow: none;' src='https://documents.pludoni.de/uploads/b9bb005e9e7d89ead633c3801.png'><br>
+    <img class='icon' style='height: 1em; width: auto; box-shadow: none;' src='eb.png'><br>
     Jobs</a>
 </div>
 
