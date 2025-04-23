@@ -1,3 +1,6 @@
+:root {
+  --r-heading-text-transform: normal;
+}
 .ebicon, [data-slide="ebicon"] {
   background-image: url(https://www.empfehlungsbund.de/assets/logos/m_Logo_Empfehlungsbund-4899b0f814a3825a218fe21829273009c1106cc7c2a37c9aca949b98390370dd.png);
   background-position: top right;
