@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Rails 7 / 7.1 - New Features</title>
+
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/white.css" id="theme">
+
+		<link rel="stylesheet" href="../kamal/style.css">
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+	</head>
+	<body>
+<style>
+<style>
+    #doc.slides pre.part {
+        text-align: left;
+    }
+    #doc.slides ol, #doc.slides ul { 
+    text-align: left;}
+    .fragment { text-align: left; }
+    table td, table th { font-size: 1.4rem; }
+    a[href*='/issues'],a[href*='/commit'],a[href*='/pull'] {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 0.9em;
+        background: #ddd7;
+        border-radius: 3px;
+        
+    }
+    .ignore-pr a {
+        position: static;
+    }
+    .ignore-pr, .ignore-pr p {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        justify-content: space-around;
+    }
+     .reveal blockquote {
+      width: 100%;
+      font-size: 0.6em;
+      line-height: 1.3;
+    }
+    h1, h2, h3, h5, h6 {
+        font-family: "PT Serif", "Source Sans Pro", Helvetica, sans-serif !important;
+    }
+    p code, li code {
+        font-size: 0.7em;
+        display: inline-block;
+        background: #eee;
+        padding: 2px;
+        border-radius: 3px;
+        border: 1px solid #ccc;        
+    }
+    .has-dark-background code {
+        background: #333;
+    }
+    .has-dark-background a {
+        color: #ddf;
+    }
+</style>
+
+		<div class="reveal">
+
+			<div class="slides">
+        <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
+        <section data-markdown="index.md" data-separator="^---$" data-separator-vertical="^----$"></section>
+
+      </div>
+		</div>
+
+    <script src="../dist/reveal.js"></script>
+    <script src="../plugin/markdown/markdown.js"></script>
+    <script src="../plugin/highlight/highlight.js"></script>
+    <!-- <script src="../../plugin/notes/notes.js"></script> -->
+    <!-- <script src="../../plugin/math/math.js"></script> -->
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          //RevealNotes,
+          //RevealMath.KaTeX 
+        ]
+			});
+
+		</script>
+
+	</body>
+</html>
